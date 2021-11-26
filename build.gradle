@@ -20,13 +20,11 @@ subprojects {
     apply from: "$rootDir/dependencies.gradle"
     apply plugin: 'kotlin'
     apply plugin: 'jacoco'
-    apply plugin: "com.google.protobuf"
 
     group = 'org.suggs.grpcsandbox'
 
     repositories {
         mavenCentral()
-        google()
     }
 
     dependencies {
@@ -44,30 +42,6 @@ subprojects {
                 libs.logback
     }
 
-    protobuf {
-        protoc { artifact = libs.protoc }
-        plugins {
-            grpc { artifact = libs.protocGen }
-            grpckt { artifact = libs.protoGenKt }
-        }
-        generateProtoTasks {
-            all()*.plugins {
-                grpc {}
-                grpckt {}
-            }
-        }
-    }
-
-    sourceSets{
-        main{
-            kotlin{
-                srcDirs 'build/generated/sourcs/proto/main/grpc'
-                srcDirs 'build/generated/sourcs/proto/main/grpckt'
-                srcDirs 'build/generated/sourcs/proto/main/java'
-            }
-        }
-    }
-
     test {
         useJUnitPlatform()
     }
@@ -83,6 +57,7 @@ subprojects {
             jvmTarget = "14"
         }
     }
+
     compileTestKotlin {
         kotlinOptions {
             freeCompilerArgs = ["-Xjsr305=strict"]

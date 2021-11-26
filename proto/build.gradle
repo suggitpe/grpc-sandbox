@@ -1,3 +1,28 @@
+apply plugin: "com.google.protobuf"
+
 dependencies {
     implementation libs.javaxAnnotations
+}
+
+sourceSets {
+    main {
+        kotlin {
+            srcDirs 'build/generated/sourcs/proto/main/grpc'
+            srcDirs 'build/generated/sourcs/proto/main/grpckt'
+            srcDirs 'build/generated/sourcs/proto/main/java'
+        }
+    }
+}
+
+protobuf {
+    protoc { artifact = libs.protoc }
+    plugins {
+        grpc { artifact = libs.protocGen }
+        grpckt { artifact = libs.protoGenKt }
+    }
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {}
+            grpckt {} }
+    }
 }
