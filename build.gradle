@@ -58,6 +58,16 @@ subprojects {
         }
     }
 
+    sourceSets{
+        main{
+            kotlin{
+                srcDirs 'build/generated/sourcs/proto/main/grpc'
+                srcDirs 'build/generated/sourcs/proto/main/grpckt'
+                srcDirs 'build/generated/sourcs/proto/main/java'
+            }
+        }
+    }
+
     test {
         useJUnitPlatform()
     }
