@@ -33,8 +33,8 @@ subprojects {
         implementation libs.kotlin,
                 libs.kotlinReflect,
                 libs.slf4j,
-                libs.protobuf
-        implementation 'io.grpc:grpc-all:1.40.1'
+                libs.grpcAll,
+                libs.grpcKotlin
 
         testImplementation libs.test.junitApi,
                 libs.test.kotestAssertions,
@@ -46,29 +46,37 @@ subprojects {
 
     protobuf {
         protoc { artifact = libs.protoc }
-        plugins { grpc { artifact = libs.protocGen } }
-        generateProtoTasks { all()*.plugins { grpc {} } }
-    }
-
-    ext {
-        sourceCompatibility = 1.16
-        targetCompatibility = 1.16
+        plugins {
+            grpc { artifact = libs.protocGen }
+            grpckt { artifact = libs.protoGenKt }
+        }
+        generateProtoTasks {
+            all()*.plugins {
+                grpc {}
+                grpckt {}
+            }
+        }
     }
 
     test {
         useJUnitPlatform()
     }
 
+    java {
+        sourceCompatibility = "14"
+        targetCompatibility = "14"
+    }
+
     compileKotlin {
         kotlinOptions {
             freeCompilerArgs = ["-Xjsr305=strict"]
-            jvmTarget = "1.8"
+            jvmTarget = "14"
         }
     }
     compileTestKotlin {
         kotlinOptions {
             freeCompilerArgs = ["-Xjsr305=strict"]
-            jvmTarget = "1.8"
+            jvmTarget = "14"
         }
     }
 }
