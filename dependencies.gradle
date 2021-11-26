@@ -1,0 +1,27 @@
+ext {
+
+    kotlinVersion = '1.5.30'
+    grpcVersion = '1.9.1'
+
+    libs = [
+
+            kotlin          : "org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}",
+            kotlinReflect   : "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}",
+
+            protoc          : "com.google.protobuf:protoc:3.4.0",
+            protocGen       : "io.grpc:protoc-gen-grpc-java:1.9.1",
+            grpcAll         : "io.grpc:grpc-all:1.9.1",
+            protobuf        : "io.grpc:grpc-protobuf:1.9.1",
+            javaxAnnotations: "javax.annotation:javax.annotation-api:1.3.2",
+
+            slf4j           : 'org.slf4j:slf4j-api:1.7.26',
+            logback         : 'ch.qos.logback:logback-classic:1.2.3',
+
+            test            : [
+                    junitApi        : 'org.junit.jupiter:junit-jupiter-api:5.5.1',
+                    junitEngine     : 'org.junit.jupiter:junit-jupiter-engine:5.5.1',
+                    mockito         : 'org.mockito:mockito-core:3.0.0',
+                    kotestAssertions: 'io.kotest:kotest-assertions-core:4.6.3'
+            ]
+    ]
+}
