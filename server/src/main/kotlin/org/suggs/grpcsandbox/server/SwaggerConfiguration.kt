@@ -11,6 +11,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2
 @Configuration
 @EnableSwagger2
 open class SwaggerConfiguration {
+
     @Bean
     open fun api(): Docket = Docket(SWAGGER_2)
         .select()

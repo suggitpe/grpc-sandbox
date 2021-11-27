@@ -7,6 +7,7 @@ dependencies {
     implementation project(':proto')
 
     implementation libs.springBootStarterWeb,
+            libs.grpcSpringStarter,
             libs.swagger,
             libs.swaggerUI
 
