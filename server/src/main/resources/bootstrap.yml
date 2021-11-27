@@ -1,0 +1,4 @@
+# define the name of the application as it's registered with eureka
+spring:
+  application:
+    name: grpc-server

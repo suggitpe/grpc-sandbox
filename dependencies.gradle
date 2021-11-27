@@ -1,29 +1,36 @@
 ext {
 
-    kotlinVersion = '1.5.30'
+    kotlinVersion = '1.6.0'
     grpcVersion = '1.42.1'
+    springBootVersion = '2.5.7'
 
     libs = [
 
-            kotlin          : "org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}",
-            kotlinReflect   : "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}",
+            kotlin              : "org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}",
+            kotlinReflect       : "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}",
 
-            protoc          : "com.google.protobuf:protoc:3.17.3",
-            protocGen       : "io.grpc:protoc-gen-grpc-java:${grpcVersion}",
-            protoGenKt      : "io.grpc:protoc-gen-grpc-kotlin:1.2.0:jdk7@jar",
-            grpcAll         : "io.grpc:grpc-all:${grpcVersion}",
-            protobuf        : "io.grpc:grpc-protobuf:${grpcVersion}",
-            grpcKotlin      : "io.grpc:grpc-kotlin-stub-lite:0.2.1",
-            javaxAnnotations: "javax.annotation:javax.annotation-api:1.3.2",
+            springBootStarterWeb: "org.springframework.boot:spring-boot-starter-web:${springBootVersion}",
 
-            slf4j           : 'org.slf4j:slf4j-api:1.7.26',
-            logback         : 'ch.qos.logback:logback-classic:1.2.3',
+            swagger                   : 'io.springfox:springfox-swagger2:3.0.0',
+            swaggerUI                 : 'io.springfox:springfox-swagger-ui:3.0.0',
 
-            test            : [
-                    junitApi        : 'org.junit.jupiter:junit-jupiter-api:5.5.1',
-                    junitEngine     : 'org.junit.jupiter:junit-jupiter-engine:5.5.1',
-                    mockito         : 'org.mockito:mockito-core:3.0.0',
-                    kotestAssertions: 'io.kotest:kotest-assertions-core:4.6.3'
+            protoc              : "com.google.protobuf:protoc:3.17.3",
+            protocGen           : "io.grpc:protoc-gen-grpc-java:${grpcVersion}",
+            protoGenKt          : "io.grpc:protoc-gen-grpc-kotlin:1.2.0:jdk7@jar",
+            grpcAll             : "io.grpc:grpc-all:${grpcVersion}",
+            protobuf            : "io.grpc:grpc-protobuf:${grpcVersion}",
+            grpcKotlin          : "io.grpc:grpc-kotlin-stub-lite:0.2.1",
+            javaxAnnotations    : "javax.annotation:javax.annotation-api:1.3.2",
+
+            slf4j               : 'org.slf4j:slf4j-api:1.7.32',
+            logback             : 'ch.qos.logback:logback-classic:1.2.7',
+
+            test                : [
+                    springBootStarterTest: "org.springframework.boot:spring-boot-starter-test:${springBootVersion}",
+                    junitApi             : 'org.junit.jupiter:junit-jupiter-api:5.8.1',
+                    junitEngine          : 'org.junit.jupiter:junit-jupiter-engine:5.8.1',
+                    mockito              : 'org.mockito:mockito-core:4.1.0',
+                    kotestAssertions     : 'io.kotest:kotest-assertions-core:5.0.0'
             ]
     ]
 }

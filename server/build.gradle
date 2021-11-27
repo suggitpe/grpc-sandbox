@@ -1,3 +1,14 @@
-dependencies{
+jar {
+    archiveBaseName = 'grpc-server'
+    archiveVersion = '0.0.1'
+}
+
+dependencies {
     implementation project(':proto')
+
+    implementation libs.springBootStarterWeb,
+            libs.swagger,
+            libs.swaggerUI
+
+    testImplementation libs.test.springBootStarterTest
 }

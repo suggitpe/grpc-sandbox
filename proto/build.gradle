@@ -4,10 +4,6 @@ dependencies {
     implementation libs.javaxAnnotations
 }
 
-clean.doFirst {
-    delete "$projectDir/src/generated"
-}
-
 sourceSets {
     main {
         kotlin {
@@ -19,8 +15,11 @@ sourceSets {
 }
 
 protobuf {
-    generatedFilesBaseDir = "$projectDir/src/generated"
     protoc { artifact = libs.protoc }
+    generatedFilesBaseDir = "$projectDir/src/generated"
+    clean{
+        delete generatedFilesBaseDir
+    }
     plugins {
         grpc { artifact = libs.protocGen }
         grpckt { artifact = libs.protoGenKt }
