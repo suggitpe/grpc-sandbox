@@ -4,17 +4,22 @@ dependencies {
     implementation libs.javaxAnnotations
 }
 
+clean.doFirst {
+    delete "$projectDir/src/generated"
+}
+
 sourceSets {
     main {
         kotlin {
-            srcDirs 'build/generated/sourcs/proto/main/grpc'
-            srcDirs 'build/generated/sourcs/proto/main/grpckt'
-            srcDirs 'build/generated/sourcs/proto/main/java'
+            srcDirs 'src/generated/main/grpc'
+            srcDirs 'src/generated/main/grpckt'
+            srcDirs 'src/generated/main/java'
         }
     }
 }
 
 protobuf {
+    generatedFilesBaseDir = "$projectDir/src/generated"
     protoc { artifact = libs.protoc }
     plugins {
         grpc { artifact = libs.protocGen }
@@ -23,6 +28,7 @@ protobuf {
     generateProtoTasks {
         all()*.plugins {
             grpc {}
-            grpckt {} }
+            grpckt {}
+        }
     }
 }

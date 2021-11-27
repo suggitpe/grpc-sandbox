@@ -1,1 +1,1 @@
-include 'proto', 'client', 'server'
+include 'proto', 'server'
