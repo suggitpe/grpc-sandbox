@@ -11,5 +11,9 @@ dependencies {
             libs.swagger,
             libs.swaggerUI
 
-    testImplementation libs.test.springBootStarterTest
+    testImplementation libs.test.springBootStarterTest,
+            libs.test.coroutinesTest
+
+    implementation libs.coroutines,
+    'org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.5.2'
 }

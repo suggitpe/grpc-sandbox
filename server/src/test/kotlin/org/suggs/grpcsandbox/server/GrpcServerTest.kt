@@ -1,9 +1,9 @@
 package org.suggs.grpcsandbox.server
 
 import io.grpc.ManagedChannelBuilder
-import io.kotest.matchers.comparables.shouldBeLessThanOrEqualTo
 import io.kotest.matchers.shouldBe
 import io.kotest.matchers.shouldNotBe
+import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT
@@ -25,11 +25,13 @@ class GrpcServerTest {
     }
 
     @Test
-    suspend fun `sanity check with a hello world example`() {
-        val channel = ManagedChannelBuilder.forAddress("localhost", localPort).usePlaintext().build()
+    fun `sanity check with a hello world example`() {
+        val channel = ManagedChannelBuilder.forAddress("localhost", 9090).usePlaintext().build()
         val stub = GreeterGrpcKt.GreeterCoroutineStub(channel)
-        val response = stub.sayHello(HelloRequest.newBuilder().setName("Foobar").build())
-        response.message shouldBe "hello"
+        runBlocking {
+            val response = stub.sayHello(HelloRequest.newBuilder().setName("Foobar").build())
+            response.message shouldBe "Hello ==> Foobar"
+        }
         channel.shutdown()
     }
 }
