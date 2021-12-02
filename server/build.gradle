@@ -8,8 +8,7 @@ dependencies {
 
     implementation libs.springBootStarterWeb,
             libs.grpcSpringStarter,
-            libs.swagger,
-            libs.swaggerUI
+            libs.swaggerBootStarter
 
     testImplementation libs.test.springBootStarterTest,
             libs.test.coroutinesTest

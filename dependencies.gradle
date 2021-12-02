@@ -11,8 +11,7 @@ ext {
 
             springBootStarterWeb: "org.springframework.boot:spring-boot-starter-web:${springBootVersion}",
 
-            swagger             : 'io.springfox:springfox-swagger2:3.0.0',
-            swaggerUI           : 'io.springfox:springfox-swagger-ui:3.0.0',
+            swaggerBootStarter  : 'io.springfox:springfox-boot-starter:3.0.0',
 
             protoc              : "com.google.protobuf:protoc:3.17.3",
             protocGen           : "io.grpc:protoc-gen-grpc-java:${grpcVersion}",

@@ -1,4 +1,4 @@
-package org.suggs.grpcsandbox.server
+package org.suggs.grpcsandbox.server.helloworld
 
 import io.grpc.ManagedChannelBuilder
 import io.kotest.matchers.shouldBe
@@ -14,7 +14,7 @@ import org.suggs.grpcsandbox.proto.helloworld.HelloRequest
 
 @ContextConfiguration
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-class GrpcServerTest {
+class GreeterGrpcTest {
 
     @LocalServerPort
     private val localPort = -1
