@@ -26,7 +26,7 @@ class GreeterGrpcTest {
 
     @Test
     fun `sanity check with a hello world example`() {
-        val channel = ManagedChannelBuilder.forAddress("localhost", 9090).usePlaintext().build()
+        val channel = ManagedChannelBuilder.forAddress("localhost", 9091).usePlaintext().build()
         val stub = GreeterGrpcKt.GreeterCoroutineStub(channel)
         runBlocking {
             val response = stub.sayHello(HelloRequest.newBuilder().setName("Foobar").build())
