@@ -1,4 +1,4 @@
-name: Gradle CI
+name: GRPC CI
 
 # Controls when the workflow will run
 on:
