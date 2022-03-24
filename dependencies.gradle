@@ -1,7 +1,7 @@
 ext {
 
-    kotlinVersion = '1.6.0'
-    grpcVersion = '1.42.1'
+    kotlinVersion = '1.6.10'
+    grpcVersion = '1.45.0'
     springBootVersion = '2.5.7'
 
     libs = [
@@ -18,11 +18,11 @@ ext {
             protoGenKt          : "io.grpc:protoc-gen-grpc-kotlin:1.2.1:jdk7@jar",
             grpcAll             : "io.grpc:grpc-all:${grpcVersion}",
             protobuf            : "io.grpc:grpc-protobuf:${grpcVersion}",
-            grpcKotlin          : "io.grpc:grpc-kotlin-stub-lite:0.2.1",
+            grpcKotlin          : "io.grpc:grpc-kotlin-stub-lite:1.0.0",
             javaxAnnotations    : "javax.annotation:javax.annotation-api:1.3.2",
             grpcSpringStarter   : 'net.devh:grpc-server-spring-boot-starter:2.13.0.RELEASE',
 
-            coroutines          : 'org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.2',
+            coroutines          : 'org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.0',
             slf4j               : 'org.slf4j:slf4j-api:1.7.36',
             logback             : 'ch.qos.logback:logback-classic:1.2.11',
 
@@ -32,7 +32,7 @@ ext {
                     junitEngine          : 'org.junit.jupiter:junit-jupiter-engine:5.8.2',
                     mockito              : 'org.mockito:mockito-core:4.4.0',
                     kotestAssertions     : 'io.kotest:kotest-assertions-core:5.0.0',
-                    coroutinesTest       : 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2'
+                    coroutinesTest       : 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0'
             ]
     ]
 }
