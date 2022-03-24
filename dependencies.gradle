@@ -2,7 +2,7 @@ ext {
 
     kotlinVersion = '1.6.10'
     grpcVersion = '1.45.0'
-    springBootVersion = '2.5.7'
+    springBootVersion = '2.5.10'
 
     libs = [
 
@@ -13,7 +13,7 @@ ext {
 
             swaggerBootStarter  : 'io.springfox:springfox-boot-starter:3.0.0',
 
-            protoc              : "com.google.protobuf:protoc:3.17.3",
+            protoc              : "com.google.protobuf:protoc:3.19.4",
             protocGen           : "io.grpc:protoc-gen-grpc-java:${grpcVersion}",
             protoGenKt          : "io.grpc:protoc-gen-grpc-kotlin:1.2.1:jdk7@jar",
             grpcAll             : "io.grpc:grpc-all:${grpcVersion}",
