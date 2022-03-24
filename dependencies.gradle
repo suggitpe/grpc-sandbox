@@ -15,7 +15,7 @@ ext {
 
             protoc              : "com.google.protobuf:protoc:3.17.3",
             protocGen           : "io.grpc:protoc-gen-grpc-java:${grpcVersion}",
-            protoGenKt          : "io.grpc:protoc-gen-grpc-kotlin:1.2.0:jdk7@jar",
+            protoGenKt          : "io.grpc:protoc-gen-grpc-kotlin:1.2.1:jdk7@jar",
             grpcAll             : "io.grpc:grpc-all:${grpcVersion}",
             protobuf            : "io.grpc:grpc-protobuf:${grpcVersion}",
             grpcKotlin          : "io.grpc:grpc-kotlin-stub-lite:0.2.1",
