@@ -1,9 +1,9 @@
 ext {
 
-    kotlinVersion = '1.6.10'
-    grpcVersion = '1.45.0'
+    kotlinVersion = '1.6.20'
+    grpcVersion = '1.45.1'
     protobufVersion = '0.8.18'
-    springBootVersion = '2.5.10'
+    springBootVersion = '2.6.6'
 
     gradlePlugins = [
             kotlin: "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}",
@@ -18,7 +18,7 @@ ext {
 
             springBootStarterWeb: "org.springframework.boot:spring-boot-starter-web:${springBootVersion}",
 
-            swaggerBootStarter  : 'io.springfox:springfox-boot-starter:3.0.0',
+            springDoc  : 'org.springdoc:springdoc-openapi-ui:1.6.4',
 
             protoc              : "com.google.protobuf:protoc:3.19.4",
             protocGen           : "io.grpc:protoc-gen-grpc-java:${grpcVersion}",
