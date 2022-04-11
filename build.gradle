@@ -47,8 +47,8 @@ subprojects {
     }
 
     java {
-        sourceCompatibility = "14"
-        targetCompatibility = "14"
+        sourceCompatibility = 1.14
+        targetCompatibility = 1.14
     }
 
     compileKotlin {
