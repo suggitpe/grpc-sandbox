@@ -47,21 +47,21 @@ subprojects {
     }
 
     java {
-        sourceCompatibility = 1.14
-        targetCompatibility = 1.14
+        sourceCompatibility = 1.17
+        targetCompatibility = 1.17
     }
 
     compileKotlin {
         kotlinOptions {
             freeCompilerArgs = ["-Xjsr305=strict"]
-            jvmTarget = "14"
+            jvmTarget = 17
         }
     }
 
     compileTestKotlin {
         kotlinOptions {
             freeCompilerArgs = ["-Xjsr305=strict"]
-            jvmTarget = "14"
+            jvmTarget = 17
         }
     }
 }
